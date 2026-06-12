@@ -152,11 +152,11 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            style={{ position: 'fixed', inset: 0, zIndex: 99, backgroundColor: 'var(--navy)' }}
+            style={{ position: 'fixed', inset: 0, zIndex: 99, backgroundColor: 'var(--navy)', overflowY: 'auto' }}
             className="lg:hidden"
           >
-            <div style={{ paddingTop: '6rem', paddingBottom: '2rem', paddingLeft: '1.75rem', paddingRight: '1.75rem', height: '100%', display: 'flex', flexDirection: 'column' }}>
-              <nav style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+            <div style={{ paddingTop: '5rem', paddingBottom: '2rem', paddingLeft: '1.75rem', paddingRight: '1.75rem', minHeight: '100%', display: 'flex', flexDirection: 'column' }}>
+              <nav style={{ display: 'flex', flexDirection: 'column', gap: '1rem', flex: 1, alignItems: 'center', justifyContent: 'center' }}>
                 {navLinks.map(({ to, label }, i) => (
                   <motion.div key={to}
                     initial={{ opacity: 0, x: 20 }}
@@ -164,7 +164,7 @@ export default function Navbar() {
                     transition={{ delay: i * 0.06, duration: 0.3 }}>
                     <NavLink to={to} end={to === '/'}
                       style={({ isActive }) => ({
-                        display: 'inline-flex', alignItems: 'center', justifyContent: 'center', padding: '0.5rem 1rem', fontSize: '24px', fontWeight: 700,
+                        display: 'inline-flex', alignItems: 'center', justifyContent: 'center', padding: '0.5rem 1rem', fontSize: '20px', fontWeight: 700,
                         color: 'white', textDecoration: 'none', minHeight: '48px',
                         letterSpacing: '-0.02em', fontFamily: "'Inter', sans-serif",
                         position: 'relative'
