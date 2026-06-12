@@ -7,7 +7,7 @@ const navLinks = [
   { to: '/', label: 'Home' },
   { to: '/about', label: 'About' },
   { to: '/services', label: 'Services' },
-  { to: '/for-participants', label: 'For Participants' },
+  { to: '/for-participants', label: 'Participants' },
   { to: '/contact', label: 'Contact' },
 ]
 
@@ -135,7 +135,7 @@ export default function Navbar() {
 
             {/* Mobile toggle */}
             <button onClick={() => setMobileOpen(o => !o)}
-              style={{ background: 'rgba(255,255,255,0.08)', border: 'none', borderRadius: '0.5rem', padding: '0.5rem', color: 'white', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+              style={{ background: 'rgba(255,255,255,0.08)', border: 'none', borderRadius: '0.5rem', padding: '0.5rem', color: 'white', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '44px', minWidth: '44px' }}
               className="lg:hidden"
               aria-label={mobileOpen ? 'Close menu' : 'Open menu'}>
               {mobileOpen ? <X size={20} /> : <Menu size={20} />}
@@ -164,8 +164,8 @@ export default function Navbar() {
                     transition={{ delay: i * 0.06, duration: 0.3 }}>
                     <NavLink to={to} end={to === '/'}
                       style={({ isActive }) => ({
-                        display: 'inline-block', padding: '0.5rem 0', fontSize: '24px', fontWeight: 700,
-                        color: 'white', textDecoration: 'none',
+                        display: 'inline-flex', alignItems: 'center', justifyContent: 'center', padding: '0.5rem 1rem', fontSize: '24px', fontWeight: 700,
+                        color: 'white', textDecoration: 'none', minHeight: '48px',
                         letterSpacing: '-0.02em', fontFamily: "'Inter', sans-serif",
                         position: 'relative'
                       })}>
