@@ -17,7 +17,7 @@ const fadeUp = (delay = 0) => ({
 
 /* ─ data ─ */
 const trustItems = [
-  { icon: ShieldCheck, label: 'NDIS Unregistered Provider' },
+  { icon: ShieldCheck, label: 'Plan-Managed & Self-Managed Welcome' },
   { icon: BadgeCheck,  label: 'Fully Insured' },
   { icon: UserCheck,   label: 'Police Checked Workers' },
   { icon: MapPin,      label: 'Serving All of Victoria' },
@@ -58,8 +58,7 @@ const whyUs = [
   {
     icon: MapPin,
     title: 'Local & Reliable',
-    body: 'Based in Melbourne, serving participants across Victoria. We come to you — wherever you are.',
-
+    body: 'Based in Melbourne, we deliver supports across Victoria. We come to you — wherever you are in the state.',
   },
   {
     icon: Award,
@@ -193,22 +192,22 @@ export default function Home() {
             </motion.div>
 
             {/* Headline */}
-            <motion.h1 {...fadeUp(0.08)}
-              style={{ fontSize: 'clamp(2.8rem, 6vw, 5rem)', fontWeight: 800, color: 'white', lineHeight: 1.08, letterSpacing: '-0.03em', marginBottom: '1.5rem' }}>
-              The Beautiful{' '}
+            <motion.h1 {...fadeUp(0.08)} className="hero-title"
+              style={{ fontWeight: 800, color: 'white', lineHeight: 1.08, letterSpacing: '-0.03em', marginBottom: '1.5rem' }}>
+              The Beautiful<br className="mobile-only" />{' '}
               <span className="gradient-text">Path</span>
               <br />to Independent
               <br />Living
             </motion.h1>
 
             {/* Subheading */}
-            <motion.p {...fadeUp(0.15)}
-              style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.75, maxWidth: '500px', marginBottom: '2.5rem' }}>
+            <motion.p {...fadeUp(0.15)} className="hero-subtitle"
+              style={{ color: 'rgba(255,255,255,0.65)', maxWidth: '500px', marginBottom: '2.5rem' }}>
               Professional NDIS support services across Melbourne and Victoria, delivered with care, dignity and respect.
             </motion.p>
 
             {/* CTAs */}
-            <motion.div {...fadeUp(0.22)} style={{ display: 'flex', gap: '0.875rem', flexWrap: 'wrap', marginBottom: '4rem' }}>
+            <motion.div {...fadeUp(0.22)} className="hero-buttons" style={{ display: 'flex', gap: '0.875rem', flexWrap: 'wrap', marginBottom: '4rem' }}>
               <Link to="/contact" className="btn btn-gold btn-lg">
                 Get Started Free <ArrowRight size={18} />
               </Link>
@@ -272,11 +271,22 @@ export default function Home() {
           </div>
         </div>
         <style>{`
+          .hero-title { font-size: clamp(2.8rem, 6vw, 5rem); }
+          .hero-subtitle { font-size: 1.1rem; line-height: 1.75; }
+          .mobile-only { display: none; }
           @media (max-width: 768px) {
             .grid-trust { grid-template-columns: repeat(2, 1fr) !important; }
             .grid-trust > div:nth-child(2) { border-right: none !important; }
             .grid-trust > div:nth-child(1),
             .grid-trust > div:nth-child(2) { border-bottom: 1px solid rgba(255,255,255,0.06); }
+            .grid-trust > div { padding: 12px !important; flex-direction: column; justify-content: center; text-align: center; gap: 0.5rem !important; }
+            .grid-trust span { font-size: 12px !important; }
+            .hero-title { font-size: 48px !important; }
+            .hero-subtitle { font-size: 16px !important; line-height: 1.6 !important; }
+            .hero-buttons { flex-direction: column !important; gap: 12px !important; }
+            .hero-buttons > * { width: 100% !important; justify-content: center; }
+            .tag { font-size: 10px !important; padding: 0.3rem 0.6rem !important; white-space: normal !important; text-align: center; }
+            .mobile-only { display: block; }
           }
         `}</style>
       </section>
@@ -299,7 +309,7 @@ export default function Home() {
           </motion.div>
 
           {/* Cards */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.5rem', marginBottom: '3rem' }}>
+          <div className="services-grid">
             {services.map((svc, i) => (
               <motion.div key={svc.title} {...fadeUp(i * 0.09)}
                 className="card"
@@ -311,17 +321,15 @@ export default function Home() {
                   opacity: 0, transition: 'opacity 0.3s',
                 }} className="card-accent" />
 
-                {/* Icon */}
-                <div style={{
-                  width: '3.5rem', height: '3.5rem', borderRadius: '0.875rem',
+                <div className="svc-icon-wrap" style={{
                   background: svc.bg, display: 'flex', alignItems: 'center',
-                  justifyContent: 'center', marginBottom: '1.5rem',
+                  justifyContent: 'center', marginBottom: '1.5rem', borderRadius: '0.875rem'
                 }}>
-                  <svc.icon size={22} style={{ color: svc.color }} />
+                  <svc.icon className="svc-icon" style={{ color: svc.color }} />
                 </div>
 
-                <h3 style={{ fontWeight: 700, fontSize: '1.05rem', color: 'var(--navy)', marginBottom: '0.625rem' }}>{svc.title}</h3>
-                <p style={{ fontSize: '0.875rem', color: 'var(--text-muted)', lineHeight: 1.75, marginBottom: '1.5rem' }}>{svc.desc}</p>
+                <h3 className="svc-title" style={{ fontWeight: 700, color: 'var(--navy)', marginBottom: '0.625rem' }}>{svc.title}</h3>
+                <p className="svc-desc" style={{ color: 'var(--text-muted)', lineHeight: 1.75, marginBottom: '1.5rem' }}>{svc.desc}</p>
 
                 <Link to="/services" style={{
                   display: 'inline-flex', alignItems: 'center', gap: '0.3rem',
@@ -354,7 +362,7 @@ export default function Home() {
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6rem', alignItems: 'center' }} className="why-grid">
             {/* Left */}
-            <motion.div {...fadeUp()}>
+            <motion.div {...fadeUp()} className="why-text-col">
               <span className="eyebrow" style={{ display: 'block', marginBottom: '1rem' }}>Why Bellavio Care</span>
               <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.75rem)', fontWeight: 800, color: 'var(--navy)', letterSpacing: '-0.03em', lineHeight: 1.15, marginBottom: '1rem' }}>
                 A Different Kind of Care Provider
@@ -399,7 +407,24 @@ export default function Home() {
           </div>
         </div>
         <style>{`
-          @media (max-width: 900px) { .why-grid { grid-template-columns: 1fr !important; gap: 3rem !important; } }
+          .svc-title { font-size: 1.05rem; }
+          .svc-desc { font-size: 0.875rem; }
+          .svc-icon-wrap { width: 3.5rem; height: 3.5rem; }
+          .svc-icon { width: 22px; height: 22px; }
+          .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
+          
+          @media (max-width: 900px) { 
+            .why-grid { grid-template-columns: 1fr !important; gap: 3rem !important; } 
+          }
+          @media (max-width: 768px) {
+            .services-grid { grid-template-columns: 1fr !important; gap: 16px !important; }
+            .card { padding: 20px !important; }
+            .svc-icon-wrap { width: 40px !important; height: 40px !important; margin-bottom: 1rem !important; }
+            .svc-icon { width: 20px !important; height: 20px !important; }
+            .svc-title { font-size: 18px !important; }
+            .svc-desc { font-size: 14px !important; margin-bottom: 1rem !important; }
+            .why-text-col { padding: 0 20px !important; }
+          }
         `}</style>
       </section>
 

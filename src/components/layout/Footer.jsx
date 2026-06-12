@@ -56,11 +56,11 @@ export default function Footer() {
 
       {/* Main footer grid */}
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '3rem', padding: '5rem 0 4rem' }}>
+        <div className="footer-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '3rem', padding: '5rem 0 4rem' }}>
 
           {/* Brand */}
-          <div style={{ gridColumn: 'span 2 / span 2' }} className="lg-col-span-2">
-            <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', textDecoration: 'none', marginBottom: '1.25rem' }}>
+          <div style={{ gridColumn: 'span 2 / span 2' }} className="lg-col-span-2 footer-col">
+            <Link to="/" className="footer-brand" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', textDecoration: 'none', marginBottom: '1.25rem' }}>
               <div style={{
                 width: '2.75rem', height: '2.75rem', borderRadius: '0.75rem',
                 background: 'linear-gradient(135deg, var(--gold-light), var(--gold-dark))',
@@ -74,20 +74,20 @@ export default function Footer() {
                 <div style={{ color: 'var(--gold)', fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase' }}>NDIS Provider</div>
               </div>
             </Link>
-            <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.85rem', lineHeight: 1.8, maxWidth: '26rem', marginBottom: '1.5rem' }}>
-              The Beautiful Path to Independent Living. Professional NDIS support services across Melbourne and Victoria, delivered with dignity, compassion and respect.
+            <p className="footer-brand-text" style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.85rem', lineHeight: 1.8, maxWidth: '26rem', marginBottom: '1.5rem' }}>
+              Bellavio Care Pty Ltd is an NDIS provider serving self-managed and plan-managed participants across Victoria. ABN 48 698 992 862
             </p>
             {/* Contact quick */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+            <div className="footer-contact" style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
               <a href="tel:0405066000" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'rgba(255,255,255,0.5)', fontSize: '0.82rem', textDecoration: 'none', transition: 'color 0.2s' }}
                 onMouseEnter={e => e.currentTarget.style.color = 'var(--gold)'}
                 onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.5)'}>
                 <Phone size={13} style={{ color: 'var(--gold)' }} /> 0405 066 000
               </a>
-              <a href="mailto:singhavijot17@gmail.com" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'rgba(255,255,255,0.5)', fontSize: '0.82rem', textDecoration: 'none', transition: 'color 0.2s' }}
+              <a href="mailto:avijot@bellaviocare.com.au" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'rgba(255,255,255,0.5)', fontSize: '0.82rem', textDecoration: 'none', transition: 'color 0.2s' }}
                 onMouseEnter={e => e.currentTarget.style.color = 'var(--gold)'}
                 onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.5)'}>
-                <Mail size={13} style={{ color: 'var(--gold)' }} /> singhavijot17@gmail.com
+                <Mail size={13} style={{ color: 'var(--gold)' }} /> avijot@bellaviocare.com.au
               </a>
               <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'rgba(255,255,255,0.5)', fontSize: '0.82rem' }}>
                 <MapPin size={13} style={{ color: 'var(--gold)' }} /> Officer, VIC 3809 · Serving all of Melbourne & Victoria
@@ -96,9 +96,9 @@ export default function Footer() {
           </div>
 
           {/* Quick links */}
-          <div>
-            <p className="eyebrow" style={{ marginBottom: '1.25rem' }}>Quick Links</p>
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+          <div className="footer-col">
+            <p className="eyebrow footer-section-title" style={{ marginBottom: '1.25rem' }}>Quick Links</p>
+            <ul className="footer-link-list" style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
               {quickLinks.map(({ to, label }) => (
                 <li key={to}>
                   <Link to={to} style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.85rem', textDecoration: 'none', transition: 'color 0.2s, paddingLeft 0.2s', display: 'flex', alignItems: 'center', gap: '0.4rem' }}
@@ -112,9 +112,9 @@ export default function Footer() {
           </div>
 
           {/* Services */}
-          <div>
-            <p className="eyebrow" style={{ marginBottom: '1.25rem' }}>Our Services</p>
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+          <div className="footer-col">
+            <p className="eyebrow footer-section-title" style={{ marginBottom: '1.25rem' }}>Our Services</p>
+            <ul className="footer-link-list" style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
               {serviceLinks.map(s => (
                 <li key={s}>
                   <Link to="/services" style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.85rem', textDecoration: 'none', transition: 'color 0.2s, paddingLeft 0.2s' }}
@@ -136,21 +136,34 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', padding: '1.5rem 0', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: '1rem', paddingBottom: '2.5rem' }}>
-          <p style={{ color: 'rgba(255,255,255,0.3)', fontSize: '0.75rem' }}>
-            © 2026 Bellavio Care Pty Ltd · All rights reserved.
-          </p>
-          <div style={{ display: 'flex', gap: '1.5rem' }}>
+        <div className="footer-bottom" style={{ borderTop: '1px solid rgba(255,255,255,0.06)', padding: '1.5rem 0', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: '1rem', paddingBottom: '1.5rem' }}>
+          <div style={{ display: 'flex', gap: '1.5rem', width: '100%', justifyContent: 'center', marginBottom: '1rem' }} className="footer-links">
             {['Privacy Policy', 'Terms of Service'].map(l => (
-              <a key={l} href="#" style={{ color: 'rgba(255,255,255,0.3)', fontSize: '0.75rem', textDecoration: 'none', transition: 'color 0.2s' }}
-                onMouseEnter={e => e.currentTarget.style.color = 'rgba(255,255,255,0.7)'}
-                onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.3)'}>
+              <a key={l} href="#" style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.75rem', textDecoration: 'none', transition: 'color 0.2s' }}
+                onMouseEnter={e => e.currentTarget.style.color = 'white'}
+                onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.4)'}>
                 {l}
               </a>
             ))}
           </div>
+          <p style={{ color: 'rgba(255,255,255,0.35)', fontSize: '0.7rem', textAlign: 'center', width: '100%', lineHeight: 1.6, maxWidth: '800px', margin: '0 auto' }}>
+            Bellavio Care Pty Ltd (ABN 48 698 992 862) is an NDIS provider. We deliver supports to self-managed and plan-managed NDIS participants in accordance with the NDIS Code of Conduct. All workers hold current NDIS Worker Screening clearances and comply with relevant legislation.<br/>
+            © 2026 Bellavio Care Pty Ltd. All rights reserved.
+          </p>
         </div>
       </div>
+      <style>{`
+        @media (max-width: 768px) {
+          .footer-grid { grid-template-columns: 1fr !important; gap: 2rem !important; padding: 40px 0 32px !important; text-align: center; }
+          .footer-brand { justify-content: center !important; }
+          .footer-brand-text { margin: 0 auto 1.5rem !important; }
+          .footer-contact { align-items: center !important; }
+          .footer-section-title { font-size: 14px !important; margin-bottom: 16px !important; }
+          .footer-link-list { align-items: center !important; }
+          .footer-link-list a { font-size: 14px !important; min-height: 32px !important; display: flex; align-items: center; justify-content: center; }
+          .footer-bottom { flex-direction: column !important; gap: 1rem !important; }
+        }
+      `}</style>
     </footer>
   )
 }

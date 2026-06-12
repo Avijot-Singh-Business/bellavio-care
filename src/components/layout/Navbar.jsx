@@ -36,7 +36,7 @@ export default function Navbar() {
         className="hidden lg:block">
         <div className="container">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0.5rem 0', fontSize: '0.72rem', color: 'rgba(255,255,255,0.45)' }}>
-            <span>NDIS Unregistered Provider — Plan-Managed & Self-Managed Participants Welcome</span>
+            <span>NDIS Provider — Plan-Managed & Self-Managed Welcome</span>
             <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
               <a href="tel:0405066000" style={{ color: 'rgba(255,255,255,0.55)', display: 'flex', alignItems: 'center', gap: '0.35rem', transition: 'color 0.2s' }}
                 onMouseEnter={e => e.currentTarget.style.color = 'var(--gold)'}
@@ -85,10 +85,10 @@ export default function Navbar() {
                 <Heart size={14} fill="white" color="white" />
               </div>
               <div style={{ lineHeight: 1.2 }}>
-                <div style={{ color: 'white', fontWeight: 700, fontSize: '1.05rem', letterSpacing: '-0.01em' }}>
+                <div style={{ color: 'white', fontWeight: 700, fontSize: 'clamp(0.9rem, 4vw, 1.05rem)', letterSpacing: '-0.01em', whiteSpace: 'nowrap' }}>
                   Bellavio Care
                 </div>
-                <div style={{ color: 'var(--gold)', fontSize: '0.58rem', fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', opacity: 0.85 }}>
+                <div className="hidden lg:block" style={{ color: 'var(--gold)', fontSize: '0.58rem', fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', opacity: 0.85, marginTop: '0.1rem' }}>
                   NDIS Provider · Melbourne & VIC
                 </div>
               </div>
@@ -152,11 +152,11 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            style={{ position: 'fixed', inset: 0, zIndex: 99, backgroundColor: 'rgba(9,15,28,0.98)', backdropFilter: 'blur(20px)' }}
+            style={{ position: 'fixed', inset: 0, zIndex: 99, backgroundColor: 'var(--navy)' }}
             className="lg:hidden"
           >
             <div style={{ paddingTop: '6rem', paddingBottom: '2rem', paddingLeft: '1.75rem', paddingRight: '1.75rem', height: '100%', display: 'flex', flexDirection: 'column' }}>
-              <nav style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', flex: 1 }}>
+              <nav style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', flex: 1, alignItems: 'center', justifyContent: 'center' }}>
                 {navLinks.map(({ to, label }, i) => (
                   <motion.div key={to}
                     initial={{ opacity: 0, x: 20 }}
@@ -164,21 +164,30 @@ export default function Navbar() {
                     transition={{ delay: i * 0.06, duration: 0.3 }}>
                     <NavLink to={to} end={to === '/'}
                       style={({ isActive }) => ({
-                        display: 'block', padding: '1rem 0', fontSize: '1.6rem', fontWeight: 700,
-                        color: isActive ? 'var(--gold)' : 'white', textDecoration: 'none',
-                        borderBottom: '1px solid rgba(255,255,255,0.06)', letterSpacing: '-0.02em',
-                        fontFamily: "'Inter', sans-serif",
+                        display: 'inline-block', padding: '0.5rem 0', fontSize: '24px', fontWeight: 700,
+                        color: 'white', textDecoration: 'none',
+                        letterSpacing: '-0.02em', fontFamily: "'Inter', sans-serif",
+                        position: 'relative'
                       })}>
-                      {label}
+                      <span className={isActive ? 'underline-gold' : ''} style={{ position: 'relative' }}>
+                        {label}
+                        {/* Custom hover line for mobile links */}
+                        <span style={{
+                          position: 'absolute', bottom: '-4px', left: 0, width: '100%', height: '2px',
+                          background: 'var(--gold)', transform: isActive ? 'scaleX(1)' : 'scaleX(0)',
+                          transformOrigin: 'center', transition: 'transform 0.2s',
+                        }} className="mobile-nav-underline" />
+                      </span>
+                      <style>{`.mobile-nav-underline { transition: transform 0.2s; } a:hover .mobile-nav-underline { transform: scaleX(1) !important; }`}</style>
                     </NavLink>
                   </motion.div>
                 ))}
               </nav>
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35 }}
-                style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', paddingTop: '2rem', borderTop: '1px solid rgba(255,255,255,0.08)' }}>
-                <Link to="/contact" className="btn btn-gold"
-                  style={{ textAlign: 'center', justifyContent: 'center', borderRadius: '0.75rem', fontSize: '1rem', padding: '1rem' }}>
-                  Contact Us Today
+                style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', paddingTop: '2rem' }}>
+                <Link to="/contact" className="btn btn-gold" onClick={() => setMobileOpen(false)}
+                  style={{ textAlign: 'center', justifyContent: 'center', borderRadius: '0.75rem' }}>
+                  Get Started
                 </Link>
                 <a href="tel:0405066000"
                   style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', color: 'rgba(255,255,255,0.5)', fontSize: '0.85rem', textDecoration: 'none' }}>

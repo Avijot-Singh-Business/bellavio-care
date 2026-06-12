@@ -141,6 +141,7 @@ body {
   position: relative;
   overflow: hidden;
   white-space: nowrap;
+  font-size: 16px;
 }
 .btn::before {
   content: '';
@@ -153,9 +154,11 @@ body {
 .btn:hover::before { opacity: 1; }
 
 .btn-gold {
-  background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 50%, var(--gold-dark) 100%);
-  color: var(--navy-dark);
-  padding: 0.875rem 2rem;
+  background: #C9A84C;
+  color: black;
+  font-weight: 600;
+  padding: 16px 32px;
+  border-radius: 8px;
   box-shadow: 0 4px 20px rgba(201,168,76,0.35);
 }
 .btn-gold:hover {
@@ -167,8 +170,9 @@ body {
 .btn-outline-white {
   background: transparent;
   color: white;
-  padding: 0.875rem 2rem;
-  border: 1.5px solid rgba(255,255,255,0.35);
+  padding: 16px 32px;
+  border: 2px solid white;
+  border-radius: 8px;
 }
 .btn-outline-white:hover {
   border-color: var(--gold);
@@ -340,7 +344,34 @@ body {
 
 /* ── Responsive ── */
 @media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+  }
+  .container {
+    padding: 0 20px;
+  }
   .section { padding: 4rem 0; }
   .section-lg { padding: 5rem 0; }
   .page-hero { padding: 8rem 0 4rem; }
+  
+  /* Global font size minimum on mobile */
+  html {
+    font-size: 14px;
+  }
+  
+  p, span, li, a {
+    font-size: max(14px, 1rem) !important;
+  }
+
+  /* Global touch targets */
+  a, button, input, select {
+    min-height: 44px;
+  }
+
+  /* Buttons on mobile */
+  .btn, .btn-gold, .btn-outline-white, .btn-outline-navy, .btn-sm, .btn-lg, .btn-xl {
+    width: 100%;
+    min-height: 52px;
+    font-size: 16px !important;
+  }
 }

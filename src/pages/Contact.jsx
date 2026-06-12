@@ -11,13 +11,13 @@ const fadeUp = (delay = 0) => ({
 })
 
 const hearAboutOptions = [
-  'Google Search', 'Facebook / Instagram', 'Referral from Support Coordinator',
-  'Word of Mouth', 'NDIS Community', 'Other',
+  'Google Search', 'Facebook', 'Friend or family',
+  'Support Coordinator', 'Plan Manager', 'Other',
 ]
 
 const contactDetails = [
   { icon: Phone, label: 'Phone', value: '0405 066 000', href: 'tel:0405066000' },
-  { icon: Mail, label: 'Email', value: 'singhavijot17@gmail.com', href: 'mailto:singhavijot17@gmail.com', sub: 'Updating to avijot@bellaviocare.com.au' },
+  { icon: Mail, label: 'Email', value: 'avijot@bellaviocare.com.au', href: 'mailto:avijot@bellaviocare.com.au' },
   { icon: MapPin, label: 'Location', value: 'Officer, VIC 3809', sub: 'Serving Melbourne & Victoria' },
   { icon: Clock, label: 'Office Hours', value: 'Mon – Fri, 9am – 5pm', sub: 'AEST' },
 ]
@@ -30,10 +30,10 @@ function ContactForm() {
 
   const validate = () => {
     const e = {}
-    if (!form.name.trim()) e.name = 'Please enter your full name.'
+    if (!form.name.trim() || form.name.trim().length < 2) e.name = 'Please enter your full name (min 2 characters).'
     if (!form.email.trim() || !/\S+@\S+\.\S+/.test(form.email)) e.email = 'Please enter a valid email address.'
-    if (!form.phone.trim() || !/^[\d\s+\-()]{8,}$/.test(form.phone)) e.phone = 'Please enter a valid phone number.'
-    if (!form.message.trim() || form.message.length < 10) e.message = 'Please write at least a sentence so we can help you better.'
+    if (!form.phone.trim() || !/^[\d\s+\-()]{8,}$/.test(form.phone)) e.phone = 'Please enter a valid Australian phone number.'
+    if (!form.message.trim() || form.message.length < 20) e.message = 'Please write at least 20 characters so we can help you better.'
     return e
   }
 
@@ -51,6 +51,7 @@ function ContactForm() {
     await new Promise(r => setTimeout(r, 1200))
     setSubmitting(false)
     setSubmitted(true)
+    setForm({ name: '', email: '', phone: '', message: '', source: '' })
   }
 
   if (submitted) {
@@ -69,7 +70,7 @@ function ContactForm() {
           Message Received!
         </h3>
         <p style={{ color: 'var(--text-muted)', lineHeight: 1.75, maxWidth: '360px', marginBottom: '0.75rem' }}>
-          Thank you, <strong style={{ color: 'var(--navy)' }}>{form.name.split(' ')[0]}</strong>. We will be in touch within one business day.
+          Thank you for reaching out. We will contact you within one business day.
         </p>
         <a href="tel:0405066000" style={{ color: 'var(--gold)', fontSize: '0.875rem', fontWeight: 600, textDecoration: 'none' }}>
           Urgent? Call 0405 066 000 →
@@ -87,10 +88,10 @@ function ContactForm() {
     <form onSubmit={onSubmit} noValidate style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
       {/* Name */}
       <div>
-        <label htmlFor="cf-name" style={{ display: 'block', fontWeight: 600, fontSize: '0.82rem', color: 'var(--navy)', marginBottom: '0.5rem' }}>
+        <label htmlFor="cf-name" className="contact-form-label">
           Full Name <span style={{ color: 'var(--gold)' }}>*</span>
         </label>
-        <input id="cf-name" className="form-input" style={fieldStyle('name')}
+        <input id="cf-name" className="form-input contact-form-input" style={fieldStyle('name')}
           type="text" name="name" value={form.name} onChange={onChange}
           placeholder="e.g. Jane Smith" autoComplete="name" aria-required="true" />
         {errors.name && <p style={{ color: '#ef4444', fontSize: '0.75rem', marginTop: '0.4rem', display: 'flex', alignItems: 'center', gap: '0.3rem' }} role="alert">
@@ -100,20 +101,20 @@ function ContactForm() {
       {/* Email + Phone */}
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }} className="form-row">
         <div>
-          <label htmlFor="cf-email" style={{ display: 'block', fontWeight: 600, fontSize: '0.82rem', color: 'var(--navy)', marginBottom: '0.5rem' }}>
+          <label htmlFor="cf-email" className="contact-form-label">
             Email <span style={{ color: 'var(--gold)' }}>*</span>
           </label>
-          <input id="cf-email" className="form-input" style={fieldStyle('email')}
+          <input id="cf-email" className="form-input contact-form-input" style={fieldStyle('email')}
             type="email" name="email" value={form.email} onChange={onChange}
             placeholder="you@example.com" autoComplete="email" aria-required="true" />
           {errors.email && <p style={{ color: '#ef4444', fontSize: '0.75rem', marginTop: '0.4rem', display: 'flex', alignItems: 'center', gap: '0.3rem' }} role="alert">
             <AlertCircle size={12} />{errors.email}</p>}
         </div>
         <div>
-          <label htmlFor="cf-phone" style={{ display: 'block', fontWeight: 600, fontSize: '0.82rem', color: 'var(--navy)', marginBottom: '0.5rem' }}>
+          <label htmlFor="cf-phone" className="contact-form-label">
             Phone <span style={{ color: 'var(--gold)' }}>*</span>
           </label>
-          <input id="cf-phone" className="form-input" style={fieldStyle('phone')}
+          <input id="cf-phone" className="form-input contact-form-input" style={fieldStyle('phone')}
             type="tel" name="phone" value={form.phone} onChange={onChange}
             placeholder="0400 000 000" autoComplete="tel" aria-required="true" />
           {errors.phone && <p style={{ color: '#ef4444', fontSize: '0.75rem', marginTop: '0.4rem', display: 'flex', alignItems: 'center', gap: '0.3rem' }} role="alert">
@@ -123,10 +124,10 @@ function ContactForm() {
 
       {/* Message */}
       <div>
-        <label htmlFor="cf-message" style={{ display: 'block', fontWeight: 600, fontSize: '0.82rem', color: 'var(--navy)', marginBottom: '0.5rem' }}>
+        <label htmlFor="cf-message" className="contact-form-label">
           How Can We Help? <span style={{ color: 'var(--gold)' }}>*</span>
         </label>
-        <textarea id="cf-message" className="form-input" style={{ ...fieldStyle('message'), resize: 'vertical', minHeight: '140px' }}
+        <textarea id="cf-message" className="form-input contact-form-input" style={{ ...fieldStyle('message'), resize: 'vertical', minHeight: '140px' }}
           name="message" value={form.message} onChange={onChange} rows={5}
           placeholder="Tell us about your situation, what services you need, or any questions you have..." />
         {errors.message && <p style={{ color: '#ef4444', fontSize: '0.75rem', marginTop: '0.4rem', display: 'flex', alignItems: 'center', gap: '0.3rem' }} role="alert">
@@ -135,10 +136,10 @@ function ContactForm() {
 
       {/* Source */}
       <div>
-        <label htmlFor="cf-source" style={{ display: 'block', fontWeight: 600, fontSize: '0.82rem', color: 'var(--navy)', marginBottom: '0.5rem' }}>
+        <label htmlFor="cf-source" className="contact-form-label">
           How Did You Hear About Us?
         </label>
-        <select id="cf-source" className="form-input" name="source" value={form.source} onChange={onChange}
+        <select id="cf-source" className="form-input contact-form-input" name="source" value={form.source} onChange={onChange}
           style={{ cursor: 'pointer', color: form.source ? 'var(--navy)' : '#b0bac9', fontFamily: 'inherit' }}>
           <option value="" disabled>Select an option…</option>
           {hearAboutOptions.map(o => <option key={o} value={o} style={{ color: 'var(--navy)' }}>{o}</option>)}
@@ -156,7 +157,15 @@ function ContactForm() {
       <p style={{ textAlign: 'center', fontSize: '0.75rem', color: 'var(--text-muted)' }}>
         We respond within 1 business day · Your information stays private.
       </p>
-      <style>{`@keyframes spin { to { transform: rotate(360deg); } } @media (max-width: 520px) { .form-row { grid-template-columns: 1fr !important; } }`}</style>
+      <style>{`
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .contact-form-label { display: block; font-weight: 600; font-size: 0.82rem; color: var(--navy); margin-bottom: 0.5rem; }
+        .contact-form-input { width: 100%; min-height: 48px; font-size: 16px; }
+        @media (max-width: 768px) { 
+          .form-row { grid-template-columns: 1fr !important; } 
+          .contact-form-label { font-size: 14px !important; }
+        }
+      `}</style>
     </form>
   )
 }

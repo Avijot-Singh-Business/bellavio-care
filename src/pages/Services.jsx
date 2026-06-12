@@ -55,7 +55,7 @@ const funding = [
     title: 'Plan-Managed',
     badge: 'Most Popular',
     desc: 'Your plan manager pays Bellavio Care directly from your NDIS funds. You get full provider flexibility without managing the finances yourself.',
-    features: ['No invoicing stress for you', 'We deal with your plan manager directly', 'Any registered or unregistered provider'],
+    features: ['No invoicing stress for you', 'We deal with your plan manager directly', 'Full flexibility of providers'],
   },
   {
     icon: FileText,

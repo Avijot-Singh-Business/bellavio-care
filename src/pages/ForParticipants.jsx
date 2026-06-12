@@ -27,8 +27,8 @@ const steps = [
 
 const faqs = [
   {
-    q: 'Do I need to be NDIS registered to use Bellavio Care?',
-    a: 'You need an active NDIS plan, not a registration number. Bellavio Care is an unregistered provider working with plan-managed and self-managed participants. If your plan is agency-managed (managed directly by the NDIA), you would need a registered provider.'
+    q: 'Can I use Bellavio Care if I am self-managed or plan-managed?',
+    a: 'Yes! Bellavio Care is an NDIS provider serving plan-managed and self-managed participants. You just need an active NDIS plan.'
   },
   {
     q: 'What areas do you cover?',
@@ -169,7 +169,7 @@ export default function ForParticipants() {
           </motion.div>
 
           {/* Steps */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '2rem', marginBottom: '3.5rem' }}>
+          <div className="steps-grid">
             {steps.map((s, i) => (
               <motion.div key={s.step} {...fadeUp(i * 0.1)} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', gap: '1rem' }}>
                 <div style={{
@@ -188,8 +188,8 @@ export default function ForParticipants() {
                   )}
                 </div>
                 <p className="eyebrow" style={{ fontSize: '0.65rem' }}>{s.step}</p>
-                <h3 style={{ fontWeight: 700, color: 'white', fontSize: '0.95rem' }}>{s.title}</h3>
-                <p style={{ fontSize: '0.855rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.75 }}>{s.body}</p>
+                <h3 className="step-title" style={{ fontWeight: 700, color: 'white' }}>{s.title}</h3>
+                <p className="step-desc" style={{ color: 'rgba(255,255,255,0.5)', lineHeight: 1.75 }}>{s.body}</p>
               </motion.div>
             ))}
           </div>
@@ -200,7 +200,21 @@ export default function ForParticipants() {
             </Link>
           </motion.div>
         </div>
-        <style>{`@media (max-width: 768px) { .step-line { display: none; } }`}</style>
+        <style>{`
+          .step-title { font-size: 0.95rem; }
+          .step-desc { font-size: 0.855rem; }
+          .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-bottom: 3.5rem; }
+          @media (max-width: 1024px) {
+            .steps-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+            .step-line { display: none; }
+          }
+          @media (max-width: 768px) { 
+            .steps-grid { grid-template-columns: 1fr; gap: 32px; }
+            .step-line { display: none; }
+            .step-title { font-size: 18px !important; text-align: center; }
+            .step-desc { font-size: 14px !important; text-align: center; }
+          }
+        `}</style>
       </section>
 
       {/* FAQ */}
