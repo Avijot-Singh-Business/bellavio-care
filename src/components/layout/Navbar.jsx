@@ -155,8 +155,8 @@ export default function Navbar() {
             style={{ position: 'fixed', inset: 0, zIndex: 99, backgroundColor: 'var(--navy)', overflowY: 'auto' }}
             className="lg:hidden"
           >
-            <div style={{ paddingTop: '5rem', paddingBottom: '2rem', paddingLeft: '1.75rem', paddingRight: '1.75rem', minHeight: '100%', display: 'flex', flexDirection: 'column' }}>
-              <nav style={{ display: 'flex', flexDirection: 'column', gap: '1rem', flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+            <div style={{ padding: '6.5rem 1.5rem 3rem 1.5rem', minHeight: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', width: '100%' }}>
+              <nav style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', alignItems: 'center', width: '100%', marginBottom: '2.5rem' }}>
                 {navLinks.map(({ to, label }, i) => (
                   <motion.div key={to}
                     initial={{ opacity: 0, x: 20 }}
@@ -164,8 +164,8 @@ export default function Navbar() {
                     transition={{ delay: i * 0.06, duration: 0.3 }}>
                     <NavLink to={to} end={to === '/'}
                       style={({ isActive }) => ({
-                        display: 'inline-flex', alignItems: 'center', justifyContent: 'center', padding: '0.5rem 1rem', fontSize: '20px', fontWeight: 700,
-                        color: 'white', textDecoration: 'none', minHeight: '48px',
+                        display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '0.75rem 1rem', fontSize: '1.25rem', fontWeight: 700,
+                        color: 'white', textDecoration: 'none', minHeight: '48px', width: '100%', textAlign: 'center',
                         letterSpacing: '-0.02em', fontFamily: "'Inter', sans-serif",
                         position: 'relative'
                       })}>
@@ -184,9 +184,9 @@ export default function Navbar() {
                 ))}
               </nav>
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35 }}
-                style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', paddingTop: '2rem' }}>
+                style={{ display: 'flex', flexDirection: 'column', gap: '1rem', width: '100%', maxWidth: '300px' }}>
                 <Link to="/contact" className="btn btn-gold" onClick={() => setMobileOpen(false)}
-                  style={{ textAlign: 'center', justifyContent: 'center', borderRadius: '0.75rem' }}>
+                  style={{ textAlign: 'center', justifyContent: 'center', borderRadius: '0.75rem', width: '100%' }}>
                   Get Started
                 </Link>
                 <a href="tel:0405066000"
