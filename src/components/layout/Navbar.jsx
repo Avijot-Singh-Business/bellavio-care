@@ -95,7 +95,7 @@ export default function Navbar() {
             </Link>
 
             {/* Desktop links */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }} className="hidden lg:flex">
+            <div style={{ alignItems: 'center', gap: '0.25rem' }} className="hidden lg:flex">
               {navLinks.map(({ to, label }) => (
                 <NavLink key={to} to={to} end={to === '/'}
                   style={({ isActive }) => ({
@@ -118,7 +118,7 @@ export default function Navbar() {
             </div>
 
             {/* Right CTA */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }} className="hidden lg:flex">
+            <div style={{ alignItems: 'center', gap: '0.75rem' }} className="hidden lg:flex">
               <a href="tel:0405066000" style={{
                 display: 'flex', alignItems: 'center', gap: '0.4rem',
                 fontSize: '0.78rem', fontWeight: 600, color: 'rgba(255,255,255,0.6)',
