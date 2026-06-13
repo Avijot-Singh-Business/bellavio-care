@@ -17,7 +17,7 @@ const hearAboutOptions = [
 
 const contactDetails = [
   { icon: Phone, label: 'Phone', value: '0405 066 000', href: 'tel:0405066000' },
-  { icon: Mail, label: 'Email', value: 'avijot@bellaviocare.com.au', href: 'mailto:avijot@bellaviocare.com.au' },
+  { icon: Mail, label: 'Email', value: 'info@bellaviocare.com.au', href: 'mailto:info@bellaviocare.com.au' },
   { icon: MapPin, label: 'Location', value: 'Officer, VIC 3809', sub: 'Serving Melbourne & Victoria' },
   { icon: Clock, label: 'Office Hours', value: 'Mon – Fri, 9am – 5pm', sub: 'AEST' },
 ]

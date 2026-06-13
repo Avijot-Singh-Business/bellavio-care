@@ -84,10 +84,10 @@ export default function Footer() {
                 onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.5)'}>
                 <Phone size={13} style={{ color: 'var(--gold)' }} /> 0405 066 000
               </a>
-              <a href="mailto:avijot@bellaviocare.com.au" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'rgba(255,255,255,0.5)', fontSize: '0.82rem', textDecoration: 'none', transition: 'color 0.2s' }}
+              <a href="mailto:info@bellaviocare.com.au" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'rgba(255,255,255,0.5)', fontSize: '0.82rem', textDecoration: 'none', transition: 'color 0.2s' }}
                 onMouseEnter={e => e.currentTarget.style.color = 'var(--gold)'}
                 onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.5)'}>
-                <Mail size={13} style={{ color: 'var(--gold)' }} /> avijot@bellaviocare.com.au
+                <Mail size={13} style={{ color: 'var(--gold)' }} /> info@bellaviocare.com.au
               </a>
               <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'rgba(255,255,255,0.5)', fontSize: '0.82rem' }}>
                 <MapPin size={13} style={{ color: 'var(--gold)' }} /> Officer, VIC 3809 · Serving all of Melbourne & Victoria
