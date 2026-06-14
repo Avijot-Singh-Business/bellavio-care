@@ -169,16 +169,20 @@ export default function Navbar() {
                         letterSpacing: '-0.02em', fontFamily: "'Inter', sans-serif",
                         position: 'relative'
                       })}>
-                      <span className={isActive ? 'underline-gold' : ''} style={{ position: 'relative' }}>
-                        {label}
-                        {/* Custom hover line for mobile links */}
-                        <span style={{
-                          position: 'absolute', bottom: '-4px', left: 0, width: '100%', height: '2px',
-                          background: 'var(--gold)', transform: isActive ? 'scaleX(1)' : 'scaleX(0)',
-                          transformOrigin: 'center', transition: 'transform 0.2s',
-                        }} className="mobile-nav-underline" />
-                      </span>
-                      <style>{`.mobile-nav-underline { transition: transform 0.2s; } a:hover .mobile-nav-underline { transform: scaleX(1) !important; }`}</style>
+                      {({ isActive }) => (
+                        <>
+                          <span className={isActive ? 'underline-gold' : ''} style={{ position: 'relative' }}>
+                            {label}
+                            {/* Custom hover line for mobile links */}
+                            <span style={{
+                              position: 'absolute', bottom: '-4px', left: 0, width: '100%', height: '2px',
+                              background: 'var(--gold)', transform: isActive ? 'scaleX(1)' : 'scaleX(0)',
+                              transformOrigin: 'center', transition: 'transform 0.2s',
+                            }} className="mobile-nav-underline" />
+                          </span>
+                          <style>{`.mobile-nav-underline { transition: transform 0.2s; } a:hover .mobile-nav-underline { transform: scaleX(1) !important; }`}</style>
+                        </>
+                      )}
                     </NavLink>
                   </motion.div>
                 ))}
