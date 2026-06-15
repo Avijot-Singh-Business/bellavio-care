@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import emailjs from '@emailjs/browser'
 import { Helmet } from 'react-helmet-async'
 import { motion } from 'framer-motion'
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle, AlertCircle } from 'lucide-react'
@@ -22,11 +23,28 @@ const contactDetails = [
   { icon: Clock, label: 'Office Hours', value: 'Mon – Fri, 9am – 5pm', sub: 'AEST' },
 ]
 
+// ─── EmailJS configuration ────────────────────────────────────────────────────
+// Create a free account at https://www.emailjs.com, then:
+//   1. Add an Email Service (Gmail / SMTP) and note the Service ID
+//   2. Create an Email Template — map {{from_name}}, {{from_email}}, {{phone}},
+//      {{source}}, {{message}} to your template fields.
+//      Set the "To Email" in the template to: info@bellaviocare.com.au
+//   3. Copy your Public Key from Account → API Keys
+//   4. Create a .env file in the project root with:
+//        VITE_EMAILJS_SERVICE_ID=service_xxxxxxx
+//        VITE_EMAILJS_TEMPLATE_ID=template_xxxxxxx
+//        VITE_EMAILJS_PUBLIC_KEY=xxxxxxxxxxxxxxxxxxxx
+// ──────────────────────────────────────────────────────────────────────────────
+const EMAILJS_SERVICE_ID  = import.meta.env.VITE_EMAILJS_SERVICE_ID  || ''
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || ''
+const EMAILJS_PUBLIC_KEY  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY  || ''
+
 function ContactForm() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', message: '', source: '' })
   const [errors, setErrors] = useState({})
   const [submitted, setSubmitted] = useState(false)
   const [submitting, setSubmitting] = useState(false)
+  const [sendError, setSendError] = useState('')
 
   const validate = () => {
     const e = {}
@@ -48,10 +66,29 @@ function ContactForm() {
     const v = validate()
     if (Object.keys(v).length) { setErrors(v); return }
     setSubmitting(true)
-    await new Promise(r => setTimeout(r, 1200))
-    setSubmitting(false)
-    setSubmitted(true)
-    setForm({ name: '', email: '', phone: '', message: '', source: '' })
+    setSendError('')
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          to_email:  'info@bellaviocare.com.au',
+          from_name: form.name,
+          from_email: form.email,
+          phone:     form.phone,
+          source:    form.source || 'Not specified',
+          message:   form.message,
+        },
+        EMAILJS_PUBLIC_KEY
+      )
+      setSubmitted(true)
+      setForm({ name: '', email: '', phone: '', message: '', source: '' })
+    } catch (err) {
+      console.error('EmailJS error:', err)
+      setSendError('Something went wrong sending your message. Please call us directly on 0405 066 000.')
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   if (submitted) {
@@ -154,6 +191,11 @@ function ContactForm() {
           : <><Send size={16} /> Send Message</>
         }
       </button>
+      {sendError && (
+        <p style={{ color: '#ef4444', fontSize: '0.8rem', textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.3rem' }} role="alert">
+          <AlertCircle size={14} />{sendError}
+        </p>
+      )}
       <p style={{ textAlign: 'center', fontSize: '0.75rem', color: 'var(--text-muted)' }}>
         We respond within 1 business day · Your information stays private.
       </p>

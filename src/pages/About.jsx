@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { Heart, Shield, Star, Handshake, ArrowRight, CheckCircle, MapPin } from 'lucide-react'
+import { Heart, Shield, Star, Handshake, ArrowRight, CheckCircle, MapPin, User } from 'lucide-react'
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 32 },
@@ -172,28 +172,28 @@ export default function About() {
                 display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
                 padding: '3.5rem 2.5rem', gap: '1.25rem', position: 'relative',
               }}
-                role="img" aria-label="Avijot Singh, Director of Bellavio Care">
+                role="img" aria-label="Our Director of Bellavio Care">
                 <div className="dot-pattern" style={{ position: 'absolute', inset: 0, opacity: 0.4 }} />
                 <div style={{
                   width: '7rem', height: '7rem', borderRadius: '50%', zIndex: 1,
                   background: 'linear-gradient(135deg, var(--gold-light), var(--gold-dark))',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  fontSize: '1.8rem', fontWeight: 900, color: 'var(--navy)',
                   boxShadow: '0 8px 32px rgba(201,168,76,0.4)',
-                }}>AS</div>
+                }}>
+                  <User size={40} style={{ color: 'var(--navy)' }} />
+                </div>
                 <div style={{ textAlign: 'center', zIndex: 1 }}>
-                  <p style={{ color: 'white', fontWeight: 700, fontSize: '1.05rem' }}>Avijot Singh</p>
-                  <p className="eyebrow" style={{ marginTop: '0.25rem' }}>Director</p>
+                  <p className="eyebrow" style={{ marginTop: '0.25rem' }}>Our Director</p>
                 </div>
               </div>
 
               {/* Bio side */}
               <div style={{ padding: '3.5rem 3rem', background: 'white' }}>
                 <span className="eyebrow" style={{ display: 'block', marginBottom: '0.75rem' }}>Meet Our Director</span>
-                <h2 style={{ fontSize: '1.6rem', fontWeight: 800, color: 'var(--navy)', letterSpacing: '-0.02em', marginBottom: '1.25rem' }}>Avijot Singh</h2>
+                <h2 style={{ fontSize: '1.6rem', fontWeight: 800, color: 'var(--navy)', letterSpacing: '-0.02em', marginBottom: '1.25rem' }}>Our Director</h2>
                 <div className="prose">
-                  <p>Avijot founded Bellavio Care with a deeply personal commitment to transforming how disability support is delivered across Melbourne and Victoria. With a background in healthcare and community services, he understands the challenges participants and families face when navigating the NDIS.</p>
-                  <p>His vision is simple: every participant deserves to be treated as an individual — with respect, warmth and genuine professional care. He leads Bellavio Care with the same values he would want for his own family.</p>
+                  <p>Bellavio Care was founded with a deeply personal commitment to transforming how disability support is delivered across Melbourne and Victoria. With a background in healthcare and community services, our director understands the challenges participants and families face when navigating the NDIS.</p>
+                  <p>The vision is simple: every participant deserves to be treated as an individual — with respect, warmth and genuine professional care. Bellavio Care is led with the same values we would want for our own family.</p>
                 </div>
                 <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginTop: '1.75rem' }}>
                   {['NDIS Expert', 'Community Focused', 'Passionate Advocate'].map(tag => (
