@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { Menu, X, Heart, Phone } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
+import logoImg from '../../assets/logo.png'
 
 const navLinks = [
   { to: '/', label: 'Home' },
@@ -76,14 +77,7 @@ export default function Navbar() {
             {/* Logo */}
             <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', textDecoration: 'none' }}
               aria-label="Bellavio Care home">
-              <div style={{
-                width: '2.4rem', height: '2.4rem', borderRadius: '0.6rem',
-                background: 'linear-gradient(135deg, var(--gold-light), var(--gold-dark))',
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                boxShadow: '0 4px 14px rgba(201,168,76,0.4)',
-              }}>
-                <Heart size={14} fill="white" color="white" />
-              </div>
+              <img src={logoImg} alt="Bellavio Care Logo" style={{ height: '2.8rem', width: 'auto' }} />
               <div style={{ lineHeight: 1.2 }}>
                 <div style={{ color: 'white', fontWeight: 700, fontSize: 'clamp(0.9rem, 4vw, 1.05rem)', letterSpacing: '-0.01em', whiteSpace: 'nowrap' }}>
                   Bellavio Care
