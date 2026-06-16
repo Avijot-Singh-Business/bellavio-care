@@ -97,7 +97,7 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>Bellavio Care — NDIS Support Provider Melbourne &amp; Victoria</title>
+        <title>NDIS Service Provider in Melbourne</title>
         <meta name="description" content="Professional NDIS daily living and community access support across Melbourne and Victoria. Plan-managed and self-managed participants welcome." />
       </Helmet>
 
