@@ -17,7 +17,7 @@ const hearAboutOptions = [
 ]
 
 const contactDetails = [
-  { icon: Phone, label: 'Phone', value: '0405 066 000', href: 'tel:0405066000' },
+  { icon: Phone, label: 'Phone', value: '0433 381 145', href: 'tel:0433381145' },
   { icon: Mail, label: 'Email', value: 'info@bellaviocare.com.au', href: 'mailto:info@bellaviocare.com.au' },
   { icon: MapPin, label: 'Location', value: 'Officer, VIC 3809', sub: 'Serving Melbourne & Victoria' },
   { icon: Clock, label: 'Office Hours', value: 'Mon – Fri, 9am – 5pm', sub: 'AEST' },
@@ -90,7 +90,7 @@ function ContactForm() {
       setForm({ name: '', email: '', phone: '', message: '', source: '' })
     } catch (err) {
       console.error('EmailJS error:', err)
-      setSendError('Something went wrong sending your message. Please call us directly on 0405 066 000.')
+      setSendError('Something went wrong sending your message. Please call us directly on 0433 381 145.')
     } finally {
       setSubmitting(false)
     }
@@ -114,8 +114,8 @@ function ContactForm() {
         <p style={{ color: 'var(--text-muted)', lineHeight: 1.75, maxWidth: '360px', marginBottom: '0.75rem' }}>
           Thank you for reaching out. We will contact you within one business day.
         </p>
-        <a href="tel:0405066000" style={{ color: 'var(--gold)', fontSize: '0.875rem', fontWeight: 600, textDecoration: 'none' }}>
-          Urgent? Call 0405 066 000 →
+        <a href="tel:0433381145" style={{ color: 'var(--gold)', fontSize: '0.875rem', fontWeight: 600, textDecoration: 'none' }}>
+          Urgent? Call 0433 381 145 →
         </a>
       </motion.div>
     )
@@ -222,7 +222,7 @@ export default function Contact() {
     <>
       <Helmet>
         <title>Contact Bellavio Care — NDIS Provider Melbourne &amp; Victoria</title>
-        <meta name="description" content="Contact Bellavio Care today. Call 0405 066 000 or send us a message to discuss NDIS support services across Melbourne and Victoria." />
+        <meta name="description" content="Contact Bellavio Care today. Call 0433 381 145 or send us a message to discuss NDIS support services across Melbourne and Victoria." />
       </Helmet>
 
       {/* HERO */}
@@ -347,9 +347,9 @@ export default function Contact() {
                 }}>
                 <p style={{ fontWeight: 700, fontSize: '0.875rem', color: 'var(--navy)', marginBottom: '0.3rem' }}>Prefer to call?</p>
                 <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '1.25rem' }}>We love hearing from participants directly.</p>
-                <a href="tel:0405066000" className="btn btn-gold"
+                <a href="tel:0433381145" className="btn btn-gold"
                   style={{ display: 'inline-flex', padding: '0.75rem 1.75rem', fontSize: '0.875rem' }}>
-                  <Phone size={15} /> 0405 066 000
+                  <Phone size={15} /> 0433 381 145
                 </a>
               </motion.div>
             </div>

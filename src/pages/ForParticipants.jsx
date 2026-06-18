@@ -19,7 +19,7 @@ const ndisSteps = [
 ]
 
 const steps = [
-  { icon: Phone, step: '01', title: 'Contact Us', body: 'Call 0405 066 000 or fill in our contact form. We will respond within one business day.' },
+  { icon: Phone, step: '01', title: 'Contact Us', body: 'Call 0433 381 145 or fill in our contact form. We will respond within one business day.' },
   { icon: MessageCircle, step: '02', title: 'Initial Meeting', body: 'A free, no-obligation conversation — in person or by phone — to understand your needs and goals.' },
   { icon: FileText, step: '03', title: 'Sign Agreement', body: 'A clear Service Agreement outlining supports, schedule and pricing. Completely transparent — no surprises.' },
   { icon: Handshake, step: '04', title: 'Supports Begin', body: 'Your support starts. We match you with the right worker and keep you informed every step of the way.' },

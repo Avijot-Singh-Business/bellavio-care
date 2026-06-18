@@ -42,9 +42,9 @@ export default function Footer() {
               </p>
             </div>
             <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-              <a href="tel:0405066000" className="btn btn-outline-white btn-sm"
+              <a href="tel:0433381145" className="btn btn-outline-white btn-sm"
                 style={{ borderColor: 'rgba(255,255,255,0.25)' }}>
-                <Phone size={14} /> 0405 066 000
+                <Phone size={14} /> 0433 381 145
               </a>
               <Link to="/contact" className="btn btn-gold btn-sm">
                 Get in Touch <ArrowRight size={13} />
@@ -79,10 +79,10 @@ export default function Footer() {
             </p>
             {/* Contact quick */}
             <div className="footer-contact" style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-              <a href="tel:0405066000" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'rgba(255,255,255,0.5)', fontSize: '0.82rem', textDecoration: 'none', transition: 'color 0.2s' }}
+              <a href="tel:0433381145" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'rgba(255,255,255,0.5)', fontSize: '0.82rem', textDecoration: 'none', transition: 'color 0.2s' }}
                 onMouseEnter={e => e.currentTarget.style.color = 'var(--gold)'}
                 onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.5)'}>
-                <Phone size={13} style={{ color: 'var(--gold)' }} /> 0405 066 000
+                <Phone size={13} style={{ color: 'var(--gold)' }} /> 0433 381 145
               </a>
               <a href="mailto:info@bellaviocare.com.au" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'rgba(255,255,255,0.5)', fontSize: '0.82rem', textDecoration: 'none', transition: 'color 0.2s' }}
                 onMouseEnter={e => e.currentTarget.style.color = 'var(--gold)'}

@@ -39,10 +39,10 @@ export default function Navbar() {
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0.5rem 0', fontSize: '0.72rem', color: 'rgba(255,255,255,0.45)' }}>
             <span>NDIS Provider — Plan-Managed & Self-Managed Welcome</span>
             <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
-              <a href="tel:0405066000" style={{ color: 'rgba(255,255,255,0.55)', display: 'flex', alignItems: 'center', gap: '0.35rem', transition: 'color 0.2s' }}
+              <a href="tel:0433381145" style={{ color: 'rgba(255,255,255,0.55)', display: 'flex', alignItems: 'center', gap: '0.35rem', transition: 'color 0.2s' }}
                 onMouseEnter={e => e.currentTarget.style.color = 'var(--gold)'}
                 onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.55)'}>
-                <Phone size={11} /> 0405 066 000
+                <Phone size={11} /> 0433 381 145
               </a>
               <span style={{ color: 'rgba(255,255,255,0.2)' }}>|</span>
               <span>Officer, VIC 3809</span>
@@ -113,14 +113,14 @@ export default function Navbar() {
 
             {/* Right CTA */}
             <div style={{ alignItems: 'center', gap: '0.75rem' }} className="hidden lg:flex">
-              <a href="tel:0405066000" style={{
+              <a href="tel:0433381145" style={{
                 display: 'flex', alignItems: 'center', gap: '0.4rem',
                 fontSize: '0.78rem', fontWeight: 600, color: 'rgba(255,255,255,0.6)',
                 textDecoration: 'none', transition: 'color 0.2s',
               }}
                 onMouseEnter={e => e.currentTarget.style.color = 'var(--gold)'}
                 onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.6)'}>
-                <Phone size={13} /> 0405 066 000
+                <Phone size={13} /> 0433 381 145
               </a>
               <Link to="/contact" className="btn btn-gold btn-sm" style={{ borderRadius: '0.55rem' }}>
                 Get Started
@@ -187,9 +187,9 @@ export default function Navbar() {
                   style={{ textAlign: 'center', justifyContent: 'center', borderRadius: '0.75rem', width: '100%' }}>
                   Get Started
                 </Link>
-                <a href="tel:0405066000"
+                <a href="tel:0433381145"
                   style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', color: 'rgba(255,255,255,0.5)', fontSize: '0.85rem', textDecoration: 'none' }}>
-                  <Phone size={14} /> 0405 066 000
+                  <Phone size={14} /> 0433 381 145
                 </a>
               </motion.div>
             </div>

@@ -518,8 +518,8 @@ export default function Home() {
               <Link to="/contact" className="btn btn-gold btn-xl">
                 Contact Us Today <ArrowRight size={18} />
               </Link>
-              <a href="tel:0405066000" className="btn btn-outline-white btn-xl">
-                <Phone size={18} /> 0405 066 000
+              <a href="tel:0433381145" className="btn btn-outline-white btn-xl">
+                <Phone size={18} /> 0433 381 145
               </a>
             </div>
           </motion.div>
