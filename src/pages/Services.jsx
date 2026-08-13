@@ -71,7 +71,7 @@ export default function Services() {
     <>
       <Helmet>
         <title>NDIS Services — Bellavio Care | Daily Living, Community Access &amp; More</title>
-        <meta name="description" content="Explore Bellavio Care's NDIS services: Daily Living Support, Community Access, Domestic Assistance and Social Support across Melbourne and Victoria." />
+        <meta name="description" content="Explore Bellavio Care's NDIS services: Daily Living Support, Community Access, Domestic Assistance and Social Support across Australia." />
       </Helmet>
 
       {/* HERO */}

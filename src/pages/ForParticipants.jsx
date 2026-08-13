@@ -32,7 +32,7 @@ const faqs = [
   },
   {
     q: 'What areas do you cover?',
-    a: 'We are based in Melbourne, VIC and serve participants across all of Victoria. This includes suburbs throughout Greater Melbourne and regional Victoria. We come to you — so no matter where you are in Victoria, contact us and we will work to support you.'
+    a: 'We serve participants across all of Australia. We come to you wherever you are — so no matter which state or territory you are in, contact us and we will work to support you.'
   },
   {
     q: 'How do I pay for services?',
@@ -82,7 +82,7 @@ export default function ForParticipants() {
     <>
       <Helmet>
         <title>For Participants — Bellavio Care | How the NDIS Works &amp; Getting Started</title>
-        <meta name="description" content="New to the NDIS? Bellavio Care explains how NDIS works and how to get started with support services across Melbourne and Victoria." />
+        <meta name="description" content="New to the NDIS? Bellavio Care explains how NDIS works and how to get started with support services across Australia." />
       </Helmet>
 
       {/* HERO */}

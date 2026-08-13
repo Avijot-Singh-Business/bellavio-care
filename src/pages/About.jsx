@@ -21,8 +21,8 @@ export default function About() {
   return (
     <>
       <Helmet>
-        <title>About Us — Bellavio Care | NDIS Support Melbourne &amp; Victoria</title>
-        <meta name="description" content="Learn about Bellavio Care — founded to give every NDIS participant the support they need to live life on their own terms across Melbourne and Victoria." />
+        <title>About Us — Bellavio Care | NDIS Support Across Australia</title>
+        <meta name="description" content="Learn about Bellavio Care — founded to give every NDIS participant the support they need to live life on their own terms across all of Australia." />
       </Helmet>
 
       {/* PAGE HERO */}
@@ -58,7 +58,7 @@ export default function About() {
               <div className="divider-gold" />
               <div className="prose" style={{ marginTop: '1.5rem' }}>
                 <p>Bellavio Care was founded with one purpose — to give every participant the support they need to live life on their own terms. We believe that quality disability support is not just about completing tasks. It is about building trust, respecting individuality, and helping people flourish.</p>
-                <p>Based in Melbourne, Victoria, we proudly serve participants across all of Victoria. We come to you wherever you are. As a mobile provider, we understand that great support should not depend on your postcode.</p>
+                <p>We proudly serve participants across all of Australia. We come to you wherever you are — from capital cities to regional and remote areas. As a mobile provider, we understand that great support should not depend on your postcode.</p>
                 <p>Our name says it all. <strong style={{ color: 'var(--navy)' }}>Bella</strong> — beautiful. <strong style={{ color: 'var(--navy)' }}>Avi</strong> — light. <strong style={{ color: 'var(--navy)' }}>Via</strong> — path. We are the beautiful path to independent living, and we take that responsibility seriously.</p>
               </div>
               <div style={{ display: 'flex', gap: '1rem', marginTop: '2.25rem', flexWrap: 'wrap' }}>
@@ -95,7 +95,7 @@ export default function About() {
                   </p>
                   {/* Stats */}
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1px', background: 'rgba(255,255,255,0.07)', borderRadius: '1rem', overflow: 'hidden' }}>
-                    {[['Melbourne', 'VIC Based'], ['Vic', 'Wide'], ['4', 'Services'], ['NDIS', 'Provider']].map(([a, b]) => (
+                    {[['National', 'Reach'], ['AU', 'Wide'], ['4', 'Services'], ['NDIS', 'Provider']].map(([a, b]) => (
                       <div key={a+b} style={{ background: 'rgba(255,255,255,0.04)', padding: '1.1rem 0.75rem', textAlign: 'center' }}>
                         <div style={{ color: 'var(--gold)', fontWeight: 800, fontSize: '0.95rem' }}>{a}</div>
                         <div style={{ color: 'rgba(255,255,255,0.35)', fontSize: '0.65rem', marginTop: '0.15rem' }}>{b}</div>
@@ -113,8 +113,8 @@ export default function About() {
               }}>
                 <MapPin size={15} style={{ color: 'var(--gold)' }} />
                 <div>
-                  <div style={{ fontWeight: 700, fontSize: '0.8rem', color: 'var(--navy)' }}>Officer, VIC 3809</div>
-                  <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)', marginTop: '0.1rem' }}>Serving Melbourne & Victoria</div>
+                  <div style={{ fontWeight: 700, fontSize: '0.8rem', color: 'var(--navy)' }}>Australia-Wide</div>
+                  <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)', marginTop: '0.1rem' }}>Serving All of Australia</div>
                 </div>
               </div>
             </motion.div>
@@ -192,7 +192,7 @@ export default function About() {
                 <span className="eyebrow" style={{ display: 'block', marginBottom: '0.75rem' }}>Meet Our Director</span>
                 <h2 style={{ fontSize: '1.6rem', fontWeight: 800, color: 'var(--navy)', letterSpacing: '-0.02em', marginBottom: '1.25rem' }}>Our Director</h2>
                 <div className="prose">
-                  <p>Bellavio Care was founded with a deeply personal commitment to transforming how disability support is delivered across Melbourne and Victoria. With a background in healthcare and community services, our director understands the challenges participants and families face when navigating the NDIS.</p>
+                  <p>Bellavio Care was founded with a deeply personal commitment to transforming how disability support is delivered across Australia. With a background in healthcare and community services, our director understands the challenges participants and families face when navigating the NDIS.</p>
                   <p>The vision is simple: every participant deserves to be treated as an individual — with respect, warmth and genuine professional care. Bellavio Care is led with the same values we would want for our own family.</p>
                 </div>
                 <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginTop: '1.75rem' }}>

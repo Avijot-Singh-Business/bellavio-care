@@ -20,7 +20,7 @@ const trustItems = [
   { icon: ShieldCheck, label: 'Plan-Managed & Self-Managed Welcome' },
   { icon: BadgeCheck,  label: 'Fully Insured' },
   { icon: UserCheck,   label: 'Police Checked Workers' },
-  { icon: MapPin,      label: 'Serving All of Victoria' },
+  { icon: MapPin,      label: 'Serving All of Australia' },
 ]
 
 const services = [
@@ -57,8 +57,8 @@ const services = [
 const whyUs = [
   {
     icon: MapPin,
-    title: 'Local & Reliable',
-    body: 'Based in Melbourne, we deliver supports across Victoria. We come to you — wherever you are in the state.',
+    title: 'Australia-Wide & Reliable',
+    body: 'We deliver supports right across Australia. We come to you — wherever you are in the country, from capital cities to regional areas.',
   },
   {
     icon: Award,
@@ -75,19 +75,19 @@ const whyUs = [
 const testimonials = [
   {
     name: 'Margaret T.',
-    location: 'Berwick, VIC',
+    location: 'Sydney, NSW',
     text: 'Bellavio Care has truly changed my life. My support worker is punctual, caring and always goes above and beyond. I finally feel the independence I deserve.',
     initials: 'MT',
   },
   {
     name: 'David K.',
-    location: 'Pakenham, VIC',
+    location: 'Brisbane, QLD',
     text: 'From the very first call, the team made us feel welcome and understood. My son loves his community access sessions — it has made such a difference.',
     initials: 'DK',
   },
   {
     name: 'Sandra L.',
-    location: 'Officer, VIC',
+    location: 'Perth, WA',
     text: 'Professional, warm and incredibly responsive. Bellavio Care is everything I hoped for in a support provider. I recommend them to everyone.',
     initials: 'SL',
   },
@@ -97,8 +97,8 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>NDIS Service Provider in Melbourne</title>
-        <meta name="description" content="Professional NDIS daily living and community access support across Melbourne and Victoria. Plan-managed and self-managed participants welcome." />
+        <title>NDIS Support Provider Across Australia — Bellavio Care</title>
+        <meta name="description" content="Professional NDIS daily living and community access support across Australia. Plan-managed and self-managed participants welcome." />
       </Helmet>
 
       {/* ═══════════════════════════════════
@@ -187,7 +187,7 @@ export default function Home() {
             {/* Eyebrow tag */}
             <motion.div {...fadeUp(0)}>
               <span className="tag" style={{ marginBottom: '2rem', display: 'inline-flex' }}>
-                <MapPin size={11} /> Officer, VIC · NDIS Provider — Plan-managed & Self-managed Welcome
+                <MapPin size={11} /> Australia-Wide · NDIS Provider — Plan-managed & Self-managed Welcome
               </span>
             </motion.div>
 
@@ -203,7 +203,7 @@ export default function Home() {
             {/* Subheading */}
             <motion.p {...fadeUp(0.15)} className="hero-subtitle"
               style={{ color: 'rgba(255,255,255,0.65)', maxWidth: '500px', marginBottom: '2.5rem' }}>
-              Professional NDIS support services across Melbourne and Victoria, delivered with care, dignity and respect.
+              Professional NDIS support services across Australia, delivered with care, dignity and respect.
             </motion.p>
 
             {/* CTAs */}
@@ -226,7 +226,7 @@ export default function Home() {
               {[
                 { value: '100%', label: 'Participant Focused' },
                 { value: '4', label: 'NDIS Services' },
-                { value: 'Vic', label: 'Wide Coverage' },
+                { value: 'AU', label: 'Wide Coverage' },
               ].map(({ value, label }) => (
                 <div key={label}>
                   <div style={{ fontSize: '1.6rem', fontWeight: 800, color: 'var(--gold)', lineHeight: 1 }}>{value}</div>

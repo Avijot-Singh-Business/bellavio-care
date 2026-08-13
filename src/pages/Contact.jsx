@@ -19,7 +19,7 @@ const hearAboutOptions = [
 const contactDetails = [
   { icon: Phone, label: 'Phone', value: '0433 381 145', href: 'tel:0433381145' },
   { icon: Mail, label: 'Email', value: 'info@bellaviocare.com.au', href: 'mailto:info@bellaviocare.com.au' },
-  { icon: MapPin, label: 'Location', value: 'Officer, VIC 3809', sub: 'Serving Melbourne & Victoria' },
+  { icon: MapPin, label: 'Location', value: 'Australia-Wide', sub: 'Serving All of Australia' },
   { icon: Clock, label: 'Office Hours', value: 'Mon – Fri, 9am – 5pm', sub: 'AEST' },
 ]
 
@@ -83,13 +83,12 @@ function ContactForm() {
           phone:     form.phone,
           source:    form.source || 'Not specified',
           message:   form.message,
-        },
-        EMAILJS_PUBLIC_KEY
+        }
       )
       setSubmitted(true)
       setForm({ name: '', email: '', phone: '', message: '', source: '' })
     } catch (err) {
-      console.error('EmailJS error:', err)
+      console.error('EmailJS error:', err?.text || err?.message || JSON.stringify(err))
       setSendError('Something went wrong sending your message. Please call us directly on 0433 381 145.')
     } finally {
       setSubmitting(false)
@@ -221,8 +220,8 @@ export default function Contact() {
   return (
     <>
       <Helmet>
-        <title>Contact Bellavio Care — NDIS Provider Melbourne &amp; Victoria</title>
-        <meta name="description" content="Contact Bellavio Care today. Call 0433 381 145 or send us a message to discuss NDIS support services across Melbourne and Victoria." />
+        <title>Contact Bellavio Care — NDIS Provider Australia-Wide</title>
+        <meta name="description" content="Contact Bellavio Care today. Call 0433 381 145 or send us a message to discuss NDIS support services across Australia." />
       </Helmet>
 
       {/* HERO */}
@@ -321,7 +320,7 @@ export default function Contact() {
                   display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '0.75rem',
                   padding: '2.5rem',
                 }}
-                role="img" aria-label="Map placeholder — Officer VIC 3809">
+                role="img" aria-label="Bellavio Care — Australia-Wide NDIS Provider">
                 <div style={{
                   width: '3rem', height: '3rem', borderRadius: '50%', background: 'var(--gold-pale)',
                   border: '1.5px solid var(--border-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -329,13 +328,9 @@ export default function Contact() {
                   <MapPin size={18} style={{ color: 'var(--gold)' }} />
                 </div>
                 <div style={{ textAlign: 'center' }}>
-                  <p style={{ fontWeight: 700, fontSize: '0.9rem', color: 'var(--navy)' }}>Officer, VIC 3809</p>
-                  <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '0.2rem' }}>Serving Melbourne &amp; Victoria</p>
+                  <p style={{ fontWeight: 700, fontSize: '0.9rem', color: 'var(--navy)' }}>Australia-Wide</p>
+                  <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '0.2rem' }}>Serving All of Australia</p>
                 </div>
-                <a href="https://maps.google.com/?q=Officer+VIC+3809" target="_blank" rel="noopener noreferrer"
-                  style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--gold)', textDecoration: 'none', borderBottom: '1px solid rgba(201,168,76,0.3)', paddingBottom: '1px' }}>
-                  View on Google Maps →
-                </a>
               </motion.div>
 
               {/* Quick call */}

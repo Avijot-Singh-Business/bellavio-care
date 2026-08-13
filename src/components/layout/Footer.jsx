@@ -75,7 +75,7 @@ export default function Footer() {
               </div>
             </Link>
             <p className="footer-brand-text" style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.85rem', lineHeight: 1.8, maxWidth: '26rem', marginBottom: '1.5rem' }}>
-              Bellavio Care Pty Ltd is an NDIS provider serving self-managed and plan-managed participants across Victoria. ABN 48 698 992 862
+              Bellavio Care Pty Ltd is an NDIS provider serving self-managed and plan-managed participants across all of Australia. ABN 48 698 992 862
             </p>
             {/* Contact quick */}
             <div className="footer-contact" style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
@@ -90,7 +90,7 @@ export default function Footer() {
                 <Mail size={13} style={{ color: 'var(--gold)' }} /> info@bellaviocare.com.au
               </a>
               <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'rgba(255,255,255,0.5)', fontSize: '0.82rem' }}>
-                <MapPin size={13} style={{ color: 'var(--gold)' }} /> Officer, VIC 3809 · Serving all of Melbourne & Victoria
+                <MapPin size={13} style={{ color: 'var(--gold)' }} /> Serving All of Australia
               </span>
             </div>
           </div>

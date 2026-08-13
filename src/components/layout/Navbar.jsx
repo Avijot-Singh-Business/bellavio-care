@@ -45,7 +45,7 @@ export default function Navbar() {
                 <Phone size={11} /> 0433 381 145
               </a>
               <span style={{ color: 'rgba(255,255,255,0.2)' }}>|</span>
-              <span>Officer, VIC 3809</span>
+              <span>Australia-Wide</span>
             </div>
           </div>
         </div>
@@ -83,7 +83,7 @@ export default function Navbar() {
                   Bellavio Care
                 </div>
                 <div className="hidden lg:block" style={{ color: 'var(--gold)', fontSize: '0.58rem', fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', opacity: 0.85, marginTop: '0.1rem' }}>
-                  NDIS Provider · Melbourne & VIC
+                  NDIS Provider · Australia-Wide
                 </div>
               </div>
             </Link>
